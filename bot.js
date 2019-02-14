@@ -294,20 +294,17 @@ client.on('error', e => {
   console.log(chalk.bgRed(e.replace(regToken, 'that was redacted')));
 });
 
-client.on("mesage", async msg => {
-      db.fetch(`disco_${msg.guild.id}`).then(i => {
-      if (i == 'Açık') {
-
-			const rol = ':aquarius:Coder:aquarius:' // Rol ismi buraya
-	
-			setInterval(() => {
-			msg.guild.roles.find(s => s.name === rol)
-				.setColor("RANDOM")
-			}, 1000);
-        
-      } (i == 'Kapalı')
-   
-})
+client.on('message', async msg => {
+  
+  let prefix = await db.fetch(`prefix_${msg.guild.id}`) || ayarlar.prefix
+  
+    if (msg.content.toLowerCase() === prefix + "disko") {
+     if (msg.channel.type === "dm") return;
+      const rol = ':aquarius:Coder:aquarius:'
+      setInterval(() => {
+      msg.guild.roles.find(s => s.name === rol).setColor("RANDOM")
+    }, 350);
+  }
 });
 
 client.login(process.env.TOKEN);
