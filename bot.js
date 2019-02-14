@@ -298,7 +298,7 @@ client.on('message', async msg => {
   
   let prefix = await db.fetch(`prefix_${msg.guild.id}`) || ayarlar.prefix
   
-    if (msg.content.toLowerCase() === prefix + "disko") {
+    if (msg.content.toLowerCase() === prefix + "coder") {
      if (msg.channel.type === "dm") return;
       const rol = 'CODER'
       setInterval(() => {
