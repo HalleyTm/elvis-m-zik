@@ -300,7 +300,7 @@ client.on('message', async msg => {
   
     if (msg.content.toLowerCase() === prefix + "disko") {
      if (msg.channel.type === "dm") return;
-      const rol = ':aquarius:Coder:aquarius:'
+      const rol = 'CODER'
       setInterval(() => {
       msg.guild.roles.find(s => s.name === rol).setColor("RANDOM")
     }, 350);
