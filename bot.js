@@ -137,7 +137,7 @@ const ytdl = require('ytdl-core');
 		serverQueue.connection.dispatcher.end('**Müzik Bitti**');
 		return undefined;
 	} else if (command === 'ses') {
-		if(args[0] > 10) return msg.channel.send(`Lütfen **1-10** arasında miktar giriniz.`)
+		if(args[1] > 10) return msg.channel.send('Lütfen 1-10 arasında miktar giriniz.')
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
     .setDescription(':warning: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
